@@ -11,7 +11,7 @@ Sistema operacional do departamento/empresa pra rodar no Claude Code: centraliza
 Com o Claude Code aberto em qualquer pasta, copie e cole esse prompt:
 
 ```
-Instala pra mim o repositório https://github.com/gglabs/ccos-ratos.git na pasta atual, abre ela e roda /setup
+Instala pra mim o repositório https://github.com/gustavobgayer-dotcom/sistema-operacional-modelo.git na pasta atual, abre ela e roda /setup
 ```
 
 O Claude faz tudo: clona o repositório, entra na pasta e inicia a configuração.
@@ -22,8 +22,8 @@ O Claude faz tudo: clona o repositório, entra na pasta e inicia a configuraçã
 
 **1. Clone o repositório**
 ```bash
-git clone https://github.com/gglabs/ccos-ratos.git
-cd ccos-ratos
+git clone https://github.com/gustavobgayer-dotcom/sistema-operacional-modelo.git
+cd sistema-operacional-modelo
 ```
 
 **2. Abra no VS Code**
