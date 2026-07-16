@@ -1,4 +1,4 @@
-# Foco Atual — Eduardo
+# Foco Atual — Gustavo
 
 ## Fase
 Crescimento. Escalando o canal próprio e organizando a operação de serviços ao mesmo tempo.

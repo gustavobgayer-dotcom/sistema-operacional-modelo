@@ -1,7 +1,7 @@
-# Contexto da Empresa — DobraLabs
+# Contexto da Empresa — GG Labs
 
-**Nome:** Eduardo
-**Negócio:** DobraLabs
+**Nome:** Gustavo
+**Negócio:** GG Labs
 **O que faz:** Presta serviços de desenvolvimento de software e consultoria pra clientes, e produz conteúdo próprio (canal Ratos de IA no YouTube).
 **Perfil:** freelancer (atende clientes) + criador (conteúdo próprio)
 **Atende clientes:** sim (dev de software + consultoria) e também usa o sistema pra gerir o próprio negócio

@@ -1,11 +1,11 @@
-# DobraLabs — Claude Code OS
+# GG Labs — Sistema Operacional
 
 ## O que é esse workspace
-Workspace de trabalho do Eduardo (DobraLabs). Aqui ficam os projetos de clientes (dev de software e consultoria), a produção de conteúdo do canal Ratos de IA, propostas, reuniões e relatórios.
+Workspace de trabalho do Gustavo (GG Labs). Aqui ficam os projetos de clientes (dev de software e consultoria), a produção de conteúdo do canal Ratos de IA, propostas, reuniões e relatórios.
 
 **Estrutura de pastas:**
 - `_contexto/` — memória do sistema (não apagar)
-- `marca/` — identidade visual e logos da DobraLabs
+- `marca/` — identidade visual e logos da GG Labs
 - `clientes/` — uma pasta por cliente (dev e consultoria); `_modelo-cliente/` é o template
 - `conteudo/` — produção do Ratos de IA (`roteiros/`, `carrosseis/`, `ideias/`)
 - `propostas/` — propostas avulsas antes de virar cliente
@@ -17,7 +17,7 @@ Workspace de trabalho do Eduardo (DobraLabs). Aqui ficam os projetos de clientes
 - `tarefas.md` — lista de tarefas corrente
 
 ## Sobre o negócio
-DobraLabs presta serviços de desenvolvimento de software e consultoria pra clientes, e mantém o canal Ratos de IA no YouTube. Operação solo: o Eduardo toca tudo.
+GG Labs presta serviços de desenvolvimento de software e consultoria pra clientes, e mantém o canal Ratos de IA no YouTube. Operação solo: o Gustavo toca tudo.
 
 ## O que mais fazemos aqui
 - Conteúdo pra redes sociais (foco no YouTube Ratos de IA)

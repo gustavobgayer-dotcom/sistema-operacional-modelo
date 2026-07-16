@@ -1,4 +1,4 @@
-# Guia de Design — DobraLabs
+# Guia de Design — GG Labs
 
 > Você pode editar esse arquivo a qualquer momento.
 > As skills de carrossel, proposta e slide leem este arquivo antes de criar qualquer visual.
@@ -54,8 +54,8 @@ Visual clean, bold mas acessível, com personalidade ("laboratório nerd"). Grid
 
 ## Logo
 
-- **Arquivo:** marca/logo-dobralabs-escuro.png *(logo escuro, pra fundo claro)*
-- **Versão pra fundo escuro:** marca/logo-dobralabs-completo-branco.png *(logo branco)*
+- **Arquivo:** marca/logo-gglabs-escuro.png *(logo escuro, pra fundo claro)*
+- **Versão pra fundo escuro:** marca/logo-gglabs-completo-branco.png *(logo branco)*
 - **Onde usar:** slide final do carrossel (CTA), header de propostas, slides de apresentação
 - **Tamanho sugerido:** largura entre 120-200px nos HTMLs
 
@@ -65,7 +65,7 @@ Visual clean, bold mas acessível, com personalidade ("laboratório nerd"). Grid
 
 > Usado no estilo "tweet" do carrossel. Preenchido automaticamente no setup.
 
-- **Nome:** Eduardo
+- **Nome:** Gustavo
 - **Handle:** @ratosdeia
 - **Foto:** *(adicione em marca/foto-perfil.jpg quando tiver)*
 - **Badge verificado:** não
@@ -74,4 +74,4 @@ Visual clean, bold mas acessível, com personalidade ("laboratório nerd"). Grid
 
 ## Observações adicionais
 
-Marca: DobraLabs. Canal de conteúdo: Ratos de IA.
+Marca: GG Labs. Canal de conteúdo: Ratos de IA.
