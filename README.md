@@ -43,30 +43,28 @@ claude
 
 ---
 
-O Claude vai te fazer algumas perguntas e configurar o sistema pro seu negócio. Em 5 minutos você tem tudo pronto.
+O `/setup` analisa o que você descreve, decide se o OS é da empresa inteira (por setor) ou de um departamento específico, e monta a estrutura de pastas sob medida. Em poucos minutos você tem tudo pronto.
 
 ---
 
 ## O que vem no kit
 
 **Skills prontas pra usar:**
-- `/setup` — configura o sistema pro seu negócio (comece por aqui)
-- `/iniciar` — carrega o contexto do negócio no começo de cada sessão de trabalho
-- `/syncar` — salva o trabalho no GitHub (commit + push, configura na primeira vez)
-- `/carrossel` — cria carrosséis pra Instagram e TikTok com a sua identidade visual
+- `/setup` — configura o OS: detecta se é empresa ou departamento e monta as pastas (comece por aqui)
+- `/iniciar` — carrega o contexto no começo de cada sessão de trabalho
+- `/mapear` — mapeia seus processos e cria skills personalizadas pro seu time
+- `/novo-projeto` — cria pasta de projeto novo com CLAUDE.md dedicado (entrevista sobre o projeto)
 - `/proposta-comercial` — gera proposta profissional em HTML a partir de um briefing
-- `/publicar-site` — publica qualquer HTML no ar com um link compartilhável
-- `/slide` — cria slide/card visual pra apresentação
+- `/slide` — cria slide/card visual pra apresentação ou deck
 - `/analisar-dados` — analisa um arquivo e gera resumo executivo com insights
-- `/roteiro-post` — transforma ideia ou texto em roteiro de post ou vídeo
 - `/email-profissional` — rascunha email profissional a partir de contexto livre
 - `/atualizar` — varre o projeto e atualiza os arquivos de contexto que ficaram desatualizados
-- `/novo-projeto` — cria pasta de projeto novo com CLAUDE.md dedicado (entrevista sobre o projeto)
+- `/syncar` — salva o trabalho no GitHub (commit + push, configura na primeira vez)
 
 **Pastas geradas pelo `/setup`:**
-- `_contexto/` — contexto do seu negócio e preferências
-- `marca/` — guia de identidade visual da sua marca
-- `templates/ferramentas/catalogo.md` — APIs, CLIs e MCPs disponíveis pra usar em skills
+- `_contexto/` — contexto da empresa/departamento, preferências e foco atual
+- `marca/` — guia de identidade visual
+- Pastas de trabalho conforme o escopo: por setor (empresa) ou por fluxo do time (departamento)
 
 **Pasta `dados/`:**
 - Drop zone pra arquivos que você quer analisar (CSV, XLSX, TXT, PDF)

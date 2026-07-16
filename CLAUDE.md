@@ -1,42 +1,40 @@
-# GG Labs — Sistema Operacional
+# GG Labs: Sistema Operacional
 
 ## O que é esse workspace
-Workspace de trabalho do Gustavo (GG Labs). Aqui ficam os projetos de clientes (dev de software e consultoria), a produção de conteúdo da GG Labs, propostas, reuniões e relatórios.
+Sistema operacional de trabalho feito pra centralizar num só lugar tudo que importa de uma empresa ou de um departamento: processos, entregas, documentos, propostas, relatórios e acompanhamento.
 
-**Estrutura de pastas:**
+Esse OS funciona em dois recortes, definidos no `/setup`:
+- **Empresa inteira** — organizado por setor (marketing, comercial, financeiro, RH, operações).
+- **Departamento único** — a pasta é o OS de um time só, com as pastas e o fluxo daquele departamento.
+
+O `/setup` analisa o que você descreve, decide entre empresa ou departamento e monta a estrutura de pastas sob medida. Antes de configurar, a estrutura abaixo é só uma referência.
+
+**Estrutura de pastas (referência, o `/setup` ajusta):**
 - `_contexto/` — memória do sistema (não apagar)
-- `marca/` — identidade visual e logos da GG Labs
-- `clientes/` — uma pasta por cliente (dev e consultoria); `_modelo-cliente/` é o template
-- `conteudo/` — produção de conteúdo da GG Labs (`roteiros/`, `carrosseis/`, `ideias/`)
-- `propostas/` — propostas avulsas antes de virar cliente
-- `reunioes/` — atas e anotações de reunião
-- `relatorios/` — relatórios e análises
+- `marca/` — identidade visual e logos
 - `dados/` — drop zone pra arquivos analisar (CSV, XLSX, TXT, PDF)
 - `templates/skills/` — templates de skills prontos pra personalizar com /mapear
 - `templates/ferramentas/catalogo.md` — APIs e ferramentas disponíveis pra usar em skills
 - `tarefas.md` — lista de tarefas corrente
+- *(pastas de trabalho criadas pelo `/setup`: por setor, se for empresa; por fluxo do time, se for departamento)*
 
 ## Sobre o negócio
-GG Labs presta serviços de desenvolvimento de software e consultoria pra clientes, e mantém canal de conteúdo próprio no YouTube. Operação solo: o Gustavo toca tudo.
+*(Preenchido pelo `/setup` em `_contexto/empresa.md`: qual é a empresa ou o departamento, o que faz, quem são as pessoas e cargos, principais indicadores/KPIs e o que a empresa mais espera desse time.)*
 
 ## O que mais fazemos aqui
-- Conteúdo pra redes sociais (foco no YouTube GG Labs)
-- Propostas comerciais e apresentações comerciais
-- Relatórios e análises
-- Muitas reuniões (atas e follow-ups)
+*(Preenchido pelo `/setup` com as principais entregas do time ou da empresa.)*
 
-## Clientes e contexto
-Atende clientes externos de dev de software e consultoria, e usa o sistema também pra gerir o próprio negócio. Cada cliente tem sua pasta em `clientes/[nome-cliente]/`.
+## Escopo e contexto
+Esse OS pode servir uma empresa inteira ou um departamento específico. O contexto detalhado (setores, processos, pessoas, KPIs) fica em `_contexto/empresa.md`.
 
 ## Tom de voz
-Informal e direto, como quem fala. Evitar travessão (—), frases-fragmento curtas em série, e dicotomias do tipo "não é isso, é aquilo". Detalhes em `_contexto/preferencias.md`.
+*(Definido em `_contexto/preferencias.md`. Por padrão: informal e direto, como quem fala. Evitar travessão (—), frases-fragmento curtas em série, e dicotomias do tipo "não é isso, é aquilo".)*
 
 ## Ferramentas conectadas
-- [ ] Google Drive
+- [ ] Notion
 - [ ] Gmail
-- [ ] Canva
-- [ ] Meta Ads (skill /meta-ads-ratos)
-- [ ] Google Ads (skill /google-ads-ratos)
+- [ ] Google Calendar
+- [ ] Google Drive
 
 *(Marcar conforme for instalando os MCPs)*
 
@@ -46,13 +44,13 @@ Informal e direto, como quem fala. Evitar travessão (—), frases-fragmento cur
 
 No início de toda conversa, ler os seguintes arquivos (se existirem e estiverem configurados):
 
-1. `_contexto/empresa.md` — quem é o usuário, o que faz, como funciona o negócio
+1. `_contexto/empresa.md` — qual é a empresa ou o departamento, o que faz, pessoas, KPIs, o que a empresa espera do time
 2. `_contexto/preferencias.md` — tom de voz, estilo de escrita, o que evitar
 3. `_contexto/estrategia.md` — foco atual, prioridades, o que pode esperar
 
-Usar essas informações como base pra qualquer resposta ou decisão. Ao sugerir prioridades, formatos ou abordagens, considerar o foco atual descrito em `estrategia.md`.
+Usar essas informações como base pra qualquer resposta ou decisão. Ao sugerir prioridades, formatos ou abordagens, considerar o foco atual descrito em `estrategia.md` e os indicadores do time descritos em `empresa.md`.
 
-Para qualquer tarefa visual (carrossel, proposta, slide, landing page), consultar `marca/design-guide.md` como referência de estilo.
+Para qualquer tarefa visual (proposta, slide, apresentação), consultar `marca/design-guide.md` como referência de estilo.
 
 Não é necessário listar o que foi lido nem confirmar a leitura. Apenas usar o contexto naturalmente.
 
@@ -70,11 +68,11 @@ Ao concluir uma tarefa que não tinha skill mas parece repetível, perguntar se 
 
 ## Regras do sistema
 
-- Cada cliente tem sua pasta em `clientes/[nome-cliente]/` (briefing.md + proposta.html)
-- Propostas de cliente salvar em `clientes/[nome-cliente]/proposta.html`
-- Conteúdo da GG Labs vai em `conteudo/`
-- Atas de reunião vão em `reunioes/`
-- Relatórios e análises vão em `relatorios/`
+- A estrutura de pastas de trabalho é a que o `/setup` montou pro escopo (empresa por setor ou departamento por fluxo).
+- Salvar cada entregável na pasta correspondente ao fluxo/setor a que pertence.
+- Propostas comerciais vão na pasta de propostas do comercial (ex.: `comercial/propostas/` ou `propostas/`).
+- Relatórios e análises vão na pasta de relatórios do time (ex.: `financeiro/relatorios/` ou `relatorios/`).
+- Manter o `tarefas.md` como lista corrente de tarefas do OS.
 
 ---
 
@@ -82,7 +80,7 @@ Ao concluir uma tarefa que não tinha skill mas parece repetível, perguntar se 
 
 Quando o usuário corrigir algo ou der uma instrução que parece permanente ("na verdade é assim", "não faça mais isso", "prefiro assim", "sempre que...", "evita..."), perguntar se quer salvar. Se sim:
 
-- **Sobre o negócio** → `_contexto/empresa.md`
+- **Sobre a empresa/departamento** → `_contexto/empresa.md`
 - **Preferências e estilo** → `_contexto/preferencias.md`
 - **Prioridades e foco atual** → `_contexto/estrategia.md`
 - **Regra de comportamento nessa pasta** → este `CLAUDE.md`

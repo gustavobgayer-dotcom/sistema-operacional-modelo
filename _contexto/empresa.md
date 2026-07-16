@@ -1,14 +1,30 @@
-# Contexto da Empresa — GG Labs
+# Contexto da Empresa / Departamento
 
-**Nome:** Gustavo
-**Negócio:** GG Labs
-**O que faz:** Presta serviços de desenvolvimento de software e consultoria pra clientes, e produz conteúdo próprio (canal Ratos de IA no YouTube).
-**Perfil:** freelancer (atende clientes) + criador (conteúdo próprio)
-**Atende clientes:** sim (dev de software + consultoria) e também usa o sistema pra gerir o próprio negócio
-**Equipe:** solo (toca tudo sozinho)
-**Ferramentas:** Google Drive, Canva, Gmail, Meta Ads, Google Ads
-**Principais entregas:** conteúdo pra redes sociais, propostas comerciais, apresentações comerciais, relatórios e análises. Faz bastante reunião.
+> Preenchido pelo `/setup`. Enquanto estiver em branco, rode `/setup` pra configurar.
+
+**Escopo:** [empresa inteira ou departamento — ex: "Departamento comercial da [empresa]"]
+**Nome:** [nome da empresa ou do time]
+**O que faz:** [o que a empresa/departamento entrega, em 1-2 frases]
+
+## Pessoas e cargos
+- [nome — cargo]
+- [nome — cargo]
+
+## Indicadores / KPIs
+- [principal indicador que o time acompanha]
+- [outro indicador]
+
+## O que a empresa espera desse time
+[a missão/entrega principal do departamento — o resultado que a empresa mais cobra dele]
+
+## Setores ou processos
+[se for empresa: setores que existem. Se for departamento: principais processos do time]
+
+## Principais entregas
+[o que o time mais produz no dia a dia]
+
+## Ferramentas
+[ferramentas que o time usa com frequência]
 
 ## Contexto adicional
-- Canal do YouTube se chama Ratos de IA.
-- Trabalha solo, então o sistema serve tanto pra produção quanto pra gestão.
+[qualquer informação relevante que ajude o OS a trabalhar melhor]

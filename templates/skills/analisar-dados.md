@@ -21,7 +21,7 @@ description: >
 ### Passo 1 — Entender o contexto
 
 Antes de analisar, perguntar se não estiver claro:
-- "O que é esse arquivo? (vendas, anúncios, métricas, respostas de pesquisa...)"
+- "O que é esse arquivo? (vendas, financeiro, operação, métricas, respostas de pesquisa...)"
 - "Qual é a pergunta principal que você quer responder com esses dados?"
 
 Se o contexto estiver óbvio pelo nome do arquivo ou pelo conteúdo, prossegue sem perguntar.
@@ -81,7 +81,7 @@ Gerar um resumo executivo em prosa (não só bullet points):
 | ... | ... | ... |
 ```
 
-Salvar em `estudos/analise-[nome]-[data].md` ou na pasta mais adequada pro perfil do usuário.
+Salvar na pasta de relatórios do time (ex: `financeiro/relatorios/analise-[nome]-[data].md` ou `relatorios/`). Se não houver, salvar em `dados/` ou perguntar onde.
 
 Perguntar se quer exportar o resumo em HTML pra compartilhar ou apresentar.
 

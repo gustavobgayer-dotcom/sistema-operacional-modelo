@@ -60,11 +60,9 @@ Criar um arquivo HTML completo com as seguintes seções:
 - Seções com espaçamento generoso
 - Valor em destaque visual (não escondido)
 
-### Passo 4 — Salvar e oferecer publicação
+### Passo 4 — Salvar
 
-Salvar em `propostas/proposta-[nome-cliente]-[data].html`
-
-Perguntar: "Quer que eu publique essa proposta com um link compartilhável? É só chamar `/publicar-site` passando o arquivo."
+Salvar na pasta de propostas do comercial (ex: `comercial/propostas/proposta-[nome-cliente]-[data].html` ou `propostas/`, conforme a estrutura do OS).
 
 ---
 

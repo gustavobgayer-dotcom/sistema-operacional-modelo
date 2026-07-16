@@ -28,10 +28,10 @@ Perguntar em conversa natural (uma pergunta por vez):
 **Pergunta 1:** "Qual é o nome do projeto? (pode ser nome do cliente, do produto ou do site)"
 
 **Pergunta 2:** "Que tipo de projeto é?"
-- Cliente (entrega de serviço pra alguém)
-- Produto próprio (site, app, curso, loja)
-- Conteúdo (canal, série, newsletter)
-- Interno (processo, ferramenta, organização)
+- Cliente (entrega ou conta de um cliente)
+- Iniciativa interna (processo, ferramenta, melhoria)
+- Projeto de um setor específico
+- Projeto que cruza setores
 
 **Pergunta 3:** "Me explica em poucas palavras o que é o projeto e o que tu precisa entregar."
 
@@ -43,10 +43,10 @@ Se o usuário der respostas completas logo na primeira, pular as perguntas já r
 
 Sugerir o local baseado no tipo de projeto e na estrutura atual:
 
-- **Cliente** → `clientes/nome-do-cliente/`
-- **Produto** → `projetos/nome-do-projeto/`
-- **Conteúdo** → `conteudo/nome-do-projeto/`
-- **Interno** → `projetos/nome-do-projeto/`
+- **Cliente** → `clientes/nome-do-cliente/` (ou `comercial/clientes/`)
+- **Iniciativa interna** → `projetos/nome-do-projeto/`
+- **Projeto de setor** → dentro da pasta do setor (ex: `marketing/nome-do-projeto/`)
+- **Cruza setores** → `projetos/nome-do-projeto/`
 
 Verificar a estrutura de pastas que já existe (ler CLAUDE.md principal) pra manter consistência.
 

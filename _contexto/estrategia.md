@@ -1,17 +1,18 @@
-# Foco Atual — Gustavo
+# Foco Atual
+
+> Preenchido pelo `/setup`. Atualize sempre que as prioridades mudarem.
 
 ## Fase
-Crescimento. Escalando o canal próprio e organizando a operação de serviços ao mesmo tempo.
+[Em que momento a empresa/departamento está agora — estruturação, crescimento, otimização, etc.]
 
 ## Prioridade principal
-1. Aumentar a produção de conteúdo pro YouTube (GG Labs).
-2. Organizar os projetos dos clientes de desenvolvimento de software e consultoria.
+[O que é o foco principal nos próximos meses]
 
 ## O que pode esperar
-Como o foco agora é produção de conteúdo e organização de clientes, não priorizar sugestões fora desses dois eixos sem necessidade.
+[O que não é prioridade no momento — ajuda o OS a não sugerir fora de hora]
 
 ## Contexto com prazo
-[Sem datas/eventos fixos registrados ainda. Atualize quando tiver prazos relevantes.]
+[Datas, metas ou eventos relevantes, se houver]
 
 ---
 *Atualize esse arquivo quando suas prioridades mudarem.*

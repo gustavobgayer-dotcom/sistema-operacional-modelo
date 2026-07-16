@@ -67,7 +67,7 @@ npx playwright screenshot --viewport-size=1080,1350 --full-page "file:///caminho
 ```bash
 node --env-file=.env scripts/publish-postforme.js
 ```
-**Quando usar:** Skills de carrossel, conteudo visual, publicacao automatica
+**Quando usar:** Skills de publicacao em redes sociais, conteudo de marketing, publicacao automatica
 
 ### WhatsApp Cloud API / Z-API
 **O que faz:** Envia e recebe mensagens de WhatsApp programaticamente (atendimento, notificacao, automacao)
@@ -114,7 +114,7 @@ node --env-file=.env scripts/publish-postforme.js
 ```bash
 brew install yt-dlp
 ```
-**Quando usar:** Skills que partem de um video pra criar conteudo (carrossel, newsletter, roteiro)
+**Quando usar:** Skills que partem de um video pra transcrever reunioes/gravacoes ou gerar conteudo a partir do audio
 
 ---
 
@@ -200,24 +200,19 @@ gh release create v1.0.0
 
 ## Trafego pago e analytics
 
-> Pra Meta Ads, Google Ads e GA4 a recomendacao e usar as skills da Ratos de IA, que ja embrulham as APIs em comandos prontos com as melhores praticas (benchmarks BR, Quality Gates, Health Score). Listadas tambem em `templates/skills/catalogo.md`.
-
 ### Google Analytics 4 (Data API)
 **O que faz:** Le dados de propriedades GA4: sessoes, usuarios, pageviews, conversoes, fontes de trafego, landing pages, dados em tempo real
 **Precisa de conta:** Sim, propriedade GA4 + service account com acesso de leitura
-**Recomendacao:** Use a skill `/ga4-ratos` (ja vem com 13 subcomandos prontos: realtime, landing pages, conversoes, etc). Repo: github.com/duduesh/ga4-ratos
 **Quando usar:** Skills que precisam ler trafego, performance de landing pages, conversoes, dados de comportamento do site
 
 ### Meta Ads (Marketing API)
 **O que faz:** Gerencia campanhas no Facebook/Instagram Ads: criar, editar, pausar, duplicar, ler insights, configurar publicos
 **Precisa de conta:** Sim, conta de anuncios Meta + token de longa duracao
-**Recomendacao:** Use a skill `/meta-ads-ratos` (43 subcomandos cobrindo CRUD completo + targeting). Orquestrada por `/ads-ratos` quando precisar de diagnostico/relatorio. Repo: github.com/duduesh/meta-ads-ratos
 **Quando usar:** Skills de gestao de midia paga Meta, relatorios de performance, criacao de campanhas, ajuste de orcamento
 
 ### Google Ads API
 **O que faz:** Le e edita campanhas Google Ads (Search, Performance Max, Shopping), busca keywords, le quality score, gera relatorios via GAQL
 **Precisa de conta:** Sim, conta Google Ads + developer token
-**Recomendacao:** Use a skill `/google-ads-ratos` (30 subcomandos: GAQL + CRUD + Quality Score + Keyword Planner). Orquestrada por `/ads-ratos` quando precisar de diagnostico/relatorio. Repo: github.com/duduesh/google-ads-ratos
 **Quando usar:** Skills de gestao Google Ads, pesquisa de keywords, relatorios de quality score, monitoramento de campanhas
 
 ---
@@ -290,7 +285,7 @@ claude mcp add context7 -- npx -y @upstash/context7-mcp
 **O que faz:** Le e atualiza boards, listas e cards do Trello via API
 **Precisa de conta:** Sim, Trello API key + token
 **Configurar:** Salvar `TRELLO_KEY` e `TRELLO_TOKEN` no `.env`
-**Quando usar:** Skills que leem briefing de card, atualizam status, criam card a partir de uma demanda. Comum em fluxo de agencia onde o board do Trello e o backlog
+**Quando usar:** Skills que leem briefing de card, atualizam status, criam card a partir de uma demanda. Comum em times que usam o board do Trello como backlog
 
 ### N8N
 **O que faz:** Dispara automacoes e workflows do N8N

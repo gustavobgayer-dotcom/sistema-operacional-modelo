@@ -95,7 +95,7 @@ Seguir pra criação manual (3.3).
 Analisar as pastas que já existem no workspace e decidir:
 
 **Se o processo gera entregáveis (arquivos):**
-- Verificar se já existe uma pasta onde faz sentido guardar (ex: `conteudo/`, `propostas/`, `clientes/`)
+- Verificar se já existe uma pasta onde faz sentido guardar (ex: `comercial/propostas/`, `financeiro/relatorios/`, ou a pasta do fluxo do time)
 - Se sim, usar a pasta existente. Não criar pasta nova.
 - Se não, criar uma pasta nova com nome claro
 
@@ -109,9 +109,9 @@ Antes de criar qualquer coisa, mostrar o plano:
 
 > "Pra esse processo, vou fazer o seguinte:
 >
-> - [Criar pasta `conteudo/newsletters/` pra guardar os resultados] (se aplicável)
-> - [Instalar a skill `/newsletter` em .claude/skills/newsletter/SKILL.md] (se aplicável)
-> - [A skill vai salvar os arquivos em `conteudo/newsletters/`] (se aplicável)
+> - [Criar pasta `financeiro/relatorios/` pra guardar os resultados] (se aplicável)
+> - [Instalar a skill `/relatorio-mensal` em .claude/skills/relatorio-mensal/SKILL.md] (se aplicável)
+> - [A skill vai salvar os arquivos em `financeiro/relatorios/`] (se aplicável)
 >
 > Bora?"
 
@@ -121,11 +121,11 @@ Só criar depois que o usuário confirmar.
 
 Antes de criar, ler `templates/ferramentas/catalogo.md` e verificar se alguma ferramenta disponível resolve parte do fluxo que o usuário descreveu. Por exemplo:
 
-- O processo envolve publicar em rede social? → verificar se Post for Me ou Canva MCP ajudam
-- Precisa gerar imagem? → verificar Gemini ou DALL-E
-- Parte de um vídeo do YouTube? → verificar yt-dlp
-- Gera HTML visual? → incorporar Playwright pra renderizar em PNG
-- Precisa ler conteúdo de sites? → usar WebFetch ou Jina Reader
+- Precisa ler ou escrever numa planilha de controle? → verificar Google Sheets (gspread) ou Google Drive MCP
+- Precisa gerar um documento (proposta, relatório, contrato)? → verificar as skills nativas de PDF/DOCX/XLSX
+- Gera HTML visual (proposta, slide, dashboard)? → incorporar Playwright pra renderizar em PNG
+- Precisa ler conteúdo de sites ou artigos? → usar WebFetch ou Jina Reader
+- Envolve tarefas ou board (Trello, ClickUp, Notion)? → verificar o MCP correspondente
 
 Se encontrar ferramenta relevante, incorporar na skill e avisar o usuário:
 

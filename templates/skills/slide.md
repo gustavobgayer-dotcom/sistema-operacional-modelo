@@ -1,7 +1,7 @@
 ---
 name: slide
 description: >
-  Cria um slide ou card visual em HTML pra usar em apresentações, decks ou posts.
+  Cria um slide ou card visual em HTML pra usar em apresentações e decks.
   Aplica a identidade visual do usuário (marca/design-guide.md).
   Use quando o usuário pedir "faz um slide", "cria um card", "quero um visual pra apresentação",
   "frame pra deck", ou pedir um slide sobre algum tema específico.
@@ -27,7 +27,7 @@ Se não estiver claro, perguntar:
 ### Passo 2 — Ler o design guide
 
 Ler `marca/design-guide.md` pra aplicar as cores e fontes corretas.
-Se estiver vazio, usar padrão: fundo escuro, acento amarelo, Bricolage Grotesque.
+Se estiver vazio, usar padrão neutro: fundo branco, texto escuro, acento azul corporativo (#1E3A5F), tipografia limpa (Inter/Helvetica).
 
 ### Passo 3 — Gerar o HTML
 
@@ -54,7 +54,7 @@ Criar um arquivo HTML único, com dimensões específicas pro formato pedido:
 
 ### Passo 4 — Salvar
 
-Salvar em `conteudo/slides/slide-[tema]-[data].html`
+Salvar na pasta de apresentações/projetos do time (ex: `projetos/slides/slide-[tema]-[data].html`). Se não houver uma pasta clara, perguntar onde salvar.
 
 Renderizar com Playwright se disponível e mostrar o resultado.
 

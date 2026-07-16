@@ -1,15 +1,15 @@
 # Preferências de Comunicação
 
+> Preenchido pelo `/setup`. Define como o Claude deve escrever os outputs do time.
+
 ## Tom de voz
-Informal e direto. Pode escrever como quem fala, sem formalidade engessada.
+[Como o Claude deve escrever — formal ou informal, mais próximo ou mais institucional. Pode diferir entre comunicação interna e externa.]
 
 ## O que evitar
-- Travessão (—). Nunca usar.
-- Frases-fragmento curtas em série (várias frases curtinhas separadas por ponto, em sequência).
-- Dicotomias do tipo "não é isso, é aquilo".
+[Palavras, construções ou vícios que incomodam nos textos]
 
 ## Estilo geral
-Informal, fluido, sem enrolação. Texto corrido em vez de bullet quando der.
+[Curto ou detalhado, com ou sem bullet points, texto corrido, etc.]
 
 ## Preferências adicionais
-[Adicione aqui conforme novas preferências aparecerem.]
+[Adicione conforme novas preferências aparecerem.]

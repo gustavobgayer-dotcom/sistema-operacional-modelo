@@ -23,7 +23,7 @@ git remote get-url origin 2>/dev/null
 
 ## Fluxo A: sem remote configurado (primeira vez)
 
-Se `git remote get-url origin` não retornar nada, o aluno ainda não conectou ao GitHub.
+Se `git remote get-url origin` não retornar nada, o usuário ainda não conectou ao GitHub.
 
 Diga:
 
@@ -60,7 +60,7 @@ git commit -m "sync: [descrição curta do que foi feito]"
 git push
 ```
 
-Para a descrição do commit, use o que foi feito na sessão (ex: "sync: nova proposta cliente X", "sync: carrossel episódio 42", "sync: atualização de contexto"). Se não souber o que colocar, use `sync: atualizações do dia`.
+Para a descrição do commit, use o que foi feito na sessão (ex: "sync: nova proposta cliente X", "sync: relatório mensal do comercial", "sync: atualização de contexto"). Se não souber o que colocar, use `sync: atualizações do dia`.
 
 Após o push, confirme:
 

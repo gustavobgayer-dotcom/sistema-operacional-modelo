@@ -1,77 +1,65 @@
-# Guia de Design — GG Labs
+# Guia de Design
 
 > Você pode editar esse arquivo a qualquer momento.
-> As skills de carrossel, proposta e slide leem este arquivo antes de criar qualquer visual.
+> As skills de proposta e slide leem este arquivo antes de criar qualquer visual.
+> Preenchido pelo `/setup`. Enquanto estiver em branco, o Claude usa um visual neutro.
 
 ---
 
 ## Cores
 
-- **Fundo principal:** branco (#FFFFFF)
+- **Fundo principal:** [ex: branco #FFFFFF]
 
-- **Cor de destaque / CTA:** amarelo/alaranjado (acento da marca)
+- **Cor de destaque / CTA:** [cor de acento da marca]
 
-- **Texto principal:** preto / quase preto
+- **Texto principal:** [ex: preto / quase preto]
 
-- **Fundo alternativo / cards:** branco com borda (ver bordas abaixo)
+- **Fundo alternativo / cards:** [descrever]
 
-- **Cor proibida:** sem cor proibida definida ainda
+- **Cor proibida:** [cor que não pode aparecer, se houver]
 
 ---
 
 ## Tipografia
 
-- **Títulos e destaques:** Instrument Serif
+- **Títulos e destaques:** [fonte]
 
-- **Corpo, subtítulos e botões:** Bricolage Grotesque
+- **Corpo, subtítulos e botões:** [fonte]
 
-- **Peso do título:** Instrument Serif tem peso único (regular), usar tamanho grande pra destaque
+- **Peso do título:** [regular / bold / etc.]
 
 ---
 
 ## Estilo geral
 
-Base branco e preto com respiro/whitespace generoso, acento amarelo/alaranjado pontual.
-Visual clean, bold mas acessível, com personalidade ("laboratório nerd"). Grid organizado.
+[Descrever o estilo visual da marca em 1-2 frases: clean, corporativo, bold, editorial, etc.]
 
 ---
 
 ## Elementos-chave
 
-- Bordas: cantos arredondados; usar dashed borders (tracejadas) em alguns elementos/cards
-- Border-radius dos cards: arredondado
-- Botões: cantos arredondados, acento amarelo/alaranjado
-- Sombras: leves ou nenhuma (visual clean)
+- Bordas: [cantos arredondados / retos, com ou sem borda]
+- Border-radius dos cards: [descrever]
+- Botões: [estilo]
+- Sombras: [leves / nenhuma / marcadas]
 
 ---
 
 ## O que NUNCA fazer
 
-- Não poluir com cor; manter base branco/preto e usar o amarelo/alaranjado com parcimônia
-- Não usar fontes fora de Instrument Serif (títulos) e Bricolage Grotesque (corpo)
+- [restrições visuais da marca]
 
 ---
 
 ## Logo
 
-- **Arquivo:** marca/logo-gglabs-escuro.png *(logo escuro, pra fundo claro)*
-- **Versão pra fundo escuro:** marca/logo-gglabs-completo-branco.png *(logo branco)*
-- **Onde usar:** slide final do carrossel (CTA), header de propostas, slides de apresentação
+- **Arquivo:** [marca/logo.png — logo pra fundo claro]
+- **Versão pra fundo escuro:** [marca/logo-branco.png]
+- **Onde usar:** header de propostas, slides, apresentações
 - **Tamanho sugerido:** largura entre 120-200px nos HTMLs
-
----
-
-## Perfil do autor
-
-> Usado no estilo "tweet" do carrossel. Preenchido automaticamente no setup.
-
-- **Nome:** Gustavo
-- **Handle:** @ratosdeia
-- **Foto:** *(adicione em marca/foto-perfil.jpg quando tiver)*
-- **Badge verificado:** não
 
 ---
 
 ## Observações adicionais
 
-Marca: GG Labs. Canal de conteúdo: Ratos de IA.
+[Qualquer detalhe adicional sobre a identidade visual.]
