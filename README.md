@@ -1,6 +1,6 @@
-# Claude Code OS — Kit de Boas-Vindas 🐀
+# GG Labs — Claude Code OS
 
-Feito pelo [Ratos de IA](https://ratosdeia.com.br) pra alunos do curso **Claude Code OS**.
+Sistema operacional pessoal da GG Labs pra rodar no Claude Code: projetos de clientes, produção de conteúdo, propostas, reuniões e relatórios, tudo organizado num só workspace.
 
 ---
 
@@ -72,11 +72,3 @@ O Claude vai te fazer algumas perguntas e configurar o sistema pro seu negócio.
 - Drop zone pra arquivos que você quer analisar (CSV, XLSX, TXT, PDF)
 - Útil quando você não tem MCP de Google Drive instalado
 - Use com `/analisar-dados dados/seu-arquivo.csv`
-
----
-
-## Ficou travado?
-
-Assiste a **Aula 1.3** do curso (instalação do Claude Code).
-
-Dúvidas: [ratosdeia.com.br](https://ratosdeia.com.br)

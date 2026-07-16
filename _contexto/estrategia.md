@@ -4,7 +4,7 @@
 Crescimento. Escalando o canal próprio e organizando a operação de serviços ao mesmo tempo.
 
 ## Prioridade principal
-1. Aumentar a produção de conteúdo pro YouTube (Ratos de IA).
+1. Aumentar a produção de conteúdo pro YouTube (GG Labs).
 2. Organizar os projetos dos clientes de desenvolvimento de software e consultoria.
 
 ## O que pode esperar
