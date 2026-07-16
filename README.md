@@ -1,6 +1,6 @@
-# GG Labs — Claude Code OS
+# GG Labs: Sistema Operacional
 
-Sistema operacional pessoal da GG Labs pra rodar no Claude Code: projetos de clientes, produção de conteúdo, propostas, reuniões e relatórios, tudo organizado num só workspace.
+Sistema operacional do departamento/empresa pra rodar no Claude Code: centraliza todas as informações importantes da GG Labs de forma personalizada em um local só, projetos de clientes, produção de conteúdo, propostas, reuniões e relatórios.
 
 ---
 
