@@ -11,7 +11,7 @@ Feito pelo [Ratos de IA](https://ratosdeia.com.br) pra alunos do curso **Claude 
 Com o Claude Code aberto em qualquer pasta, copie e cole esse prompt:
 
 ```
-Instala pra mim o repositório https://github.com/dobralabs/ccos-ratos.git na pasta atual, abre ela e roda /setup
+Instala pra mim o repositório https://github.com/gglabs/ccos-ratos.git na pasta atual, abre ela e roda /setup
 ```
 
 O Claude faz tudo: clona o repositório, entra na pasta e inicia a configuração.
@@ -22,7 +22,7 @@ O Claude faz tudo: clona o repositório, entra na pasta e inicia a configuraçã
 
 **1. Clone o repositório**
 ```bash
-git clone https://github.com/dobralabs/ccos-ratos.git
+git clone https://github.com/gglabs/ccos-ratos.git
 cd ccos-ratos
 ```
 
