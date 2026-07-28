@@ -31,6 +31,18 @@ anotacoes/
 curriculo/
 tarefas.md
 
+# Dados pessoais de carreira (CV, vagas, candidaturas, salário)
+# NUNCA remover: esse repositório é público
+curriculos/
+vagas/
+candidaturas/
+entrevistas/
+perfil/
+plano-carreira/
+evidencias/
+linkedin/
+rede/
+
 # Sistema
 .DS_Store
 node_modules/
