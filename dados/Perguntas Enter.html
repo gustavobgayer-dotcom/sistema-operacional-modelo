@@ -1,0 +1,655 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Debriefing Fernando</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Spectral:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root{
+    color-scheme: light;
+    --ground:#EEF0F3;
+    --surface:#FBFCFD;
+    --surface-2:#F3F5F8;
+    --edge:#D8DDE4;
+    --edge-soft:#E6EAEF;
+    --ink:#141922;
+    --ink-2:#414A57;
+    --ink-3:#6B7686;
+    --accent:#175A6E;
+    --accent-soft:#E1EDF1;
+    --ok:#2A6A48;
+    --ok-soft:#E2EFE7;
+    --partial:#8A5B12;
+    --partial-soft:#F5EBD9;
+    --gap:#943226;
+    --gap-soft:#F6E4E1;
+    --shadow:0 1px 2px rgba(20,25,34,.05), 0 6px 20px -12px rgba(20,25,34,.18);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      color-scheme: dark;
+      --ground:#0E1218;
+      --surface:#161C25;
+      --surface-2:#1D2530;
+      --edge:#2C3644;
+      --edge-soft:#232C38;
+      --ink:#E7ECF2;
+      --ink-2:#B3BDCA;
+      --ink-3:#818D9C;
+      --accent:#6FB6CB;
+      --accent-soft:#1B3742;
+      --ok:#7CC79B;
+      --ok-soft:#1A3227;
+      --partial:#D9AE64;
+      --partial-soft:#33291A;
+      --gap:#E0897B;
+      --gap-soft:#361F1C;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -14px rgba(0,0,0,.7);
+    }
+  }
+  :root[data-theme="dark"]{
+    color-scheme: dark;
+    --ground:#0E1218;
+    --surface:#161C25;
+    --surface-2:#1D2530;
+    --edge:#2C3644;
+    --edge-soft:#232C38;
+    --ink:#E7ECF2;
+    --ink-2:#B3BDCA;
+    --ink-3:#818D9C;
+    --accent:#6FB6CB;
+    --accent-soft:#1B3742;
+    --ok:#7CC79B;
+    --ok-soft:#1A3227;
+    --partial:#D9AE64;
+    --partial-soft:#33291A;
+    --gap:#E0897B;
+    --gap-soft:#361F1C;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -14px rgba(0,0,0,.7);
+  }
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--ground);
+    color:var(--ink);
+    font-family:"Archivo","Helvetica Neue",Arial,sans-serif;
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%}
+  [hidden]{display:none !important}
+
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 24px 96px;
+  }
+
+  /* ---------- masthead ---------- */
+  header.masthead{
+    padding:56px 0 32px;
+    border-bottom:1px solid var(--edge);
+    display:flex;
+    flex-wrap:wrap;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:24px;
+  }
+  .eyebrow{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:11.5px;
+    font-weight:500;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    margin:0 0 12px;
+  }
+  h1{
+    font-family:"Spectral",Georgia,serif;
+    font-weight:500;
+    font-size:clamp(30px,4.6vw,46px);
+    line-height:1.1;
+    letter-spacing:-.015em;
+    margin:0;
+    text-wrap:balance;
+  }
+  .sub{
+    margin:14px 0 0;
+    max-width:58ch;
+    color:var(--ink-2);
+    font-size:15px;
+  }
+  .theme-btn{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:11.5px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--ink-2);
+    background:var(--surface);
+    border:1px solid var(--edge);
+    border-radius:2px;
+    padding:9px 14px;
+    cursor:pointer;
+  }
+  .theme-btn:hover{color:var(--ink);border-color:var(--ink-3)}
+  .theme-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+  /* ---------- scoreboard ---------- */
+  .board{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:var(--edge);
+    border:1px solid var(--edge);
+    margin:32px 0 0;
+  }
+  .tile{
+    background:var(--surface);
+    padding:22px 20px;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+  }
+  .tile .n{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:38px;
+    font-weight:600;
+    line-height:1;
+    font-variant-numeric:tabular-nums;
+  }
+  .tile .lbl{
+    font-size:13px;
+    color:var(--ink-2);
+  }
+  .tile.ok .n{color:var(--ok)}
+  .tile.partial .n{color:var(--partial)}
+  .tile.gap .n{color:var(--gap)}
+
+  /* ---------- block bars ---------- */
+  .blocks{
+    margin:28px 0 0;
+    border:1px solid var(--edge);
+    background:var(--surface);
+  }
+  .brow{
+    display:grid;
+    grid-template-columns:150px 1fr 92px;
+    align-items:center;
+    gap:18px;
+    padding:14px 20px;
+    border-bottom:1px solid var(--edge-soft);
+  }
+  .brow:last-child{border-bottom:0}
+  .bname{
+    font-size:14px;
+    font-weight:600;
+  }
+  .bname span{
+    display:block;
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:11px;
+    font-weight:400;
+    color:var(--ink-3);
+    letter-spacing:.04em;
+  }
+  .bar{display:flex;height:9px;background:var(--surface-2);overflow:hidden}
+  .bar i{display:block;height:100%}
+  .bar .s-ok{background:var(--ok)}
+  .bar .s-partial{background:var(--partial)}
+  .bar .s-gap{background:var(--gap)}
+  .bcount{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:12px;
+    color:var(--ink-3);
+    text-align:right;
+    font-variant-numeric:tabular-nums;
+    white-space:nowrap;
+  }
+
+  /* ---------- filters ---------- */
+  .filters{
+    position:sticky;
+    top:0;
+    z-index:5;
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    align-items:center;
+    padding:16px 0;
+    margin:36px 0 0;
+    background:var(--ground);
+    border-bottom:1px solid var(--edge);
+  }
+  .chip{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:11.5px;
+    letter-spacing:.07em;
+    text-transform:uppercase;
+    padding:8px 13px;
+    border:1px solid var(--edge);
+    background:var(--surface);
+    color:var(--ink-2);
+    border-radius:2px;
+    cursor:pointer;
+    font-variant-numeric:tabular-nums;
+  }
+  .chip:hover{border-color:var(--ink-3);color:var(--ink)}
+  .chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .chip[aria-pressed="true"]{
+    background:var(--ink);
+    border-color:var(--ink);
+    color:var(--ground);
+  }
+  .chip[aria-pressed="true"][data-f="ok"]{background:var(--ok);border-color:var(--ok);color:var(--surface)}
+  .chip[aria-pressed="true"][data-f="partial"]{background:var(--partial);border-color:var(--partial);color:var(--surface)}
+  .chip[aria-pressed="true"][data-f="gap"]{background:var(--gap);border-color:var(--gap);color:var(--surface)}
+
+  /* ---------- sections ---------- */
+  h2.sec{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    margin:52px 0 18px;
+    padding-bottom:10px;
+    border-bottom:1px solid var(--edge);
+  }
+  .sec-wrap[hidden]+.sec-wrap{margin-top:0}
+
+  /* ---------- question cards ---------- */
+  .q{
+    background:var(--surface);
+    border:1px solid var(--edge);
+    border-left:3px solid var(--edge);
+    box-shadow:var(--shadow);
+    padding:22px 24px;
+    margin:0 0 12px;
+    display:grid;
+    grid-template-columns:44px 1fr;
+    gap:0 18px;
+  }
+  .q.ok{border-left-color:var(--ok)}
+  .q.partial{border-left-color:var(--partial)}
+  .q.gap{border-left-color:var(--gap)}
+
+  .qnum{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:15px;
+    font-weight:600;
+    color:var(--ink-3);
+    font-variant-numeric:tabular-nums;
+    padding-top:2px;
+  }
+  .qhead{display:flex;flex-direction:column;gap:10px}
+  .qtext{
+    font-size:16.5px;
+    font-weight:600;
+    line-height:1.4;
+    margin:0;
+    text-wrap:pretty;
+  }
+  .status{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:10.5px;
+    font-weight:600;
+    letter-spacing:.11em;
+    text-transform:uppercase;
+    padding:4px 9px;
+    border-radius:2px;
+    align-self:flex-start;
+  }
+  .status.ok{background:var(--ok-soft);color:var(--ok)}
+  .status.partial{background:var(--partial-soft);color:var(--partial)}
+  .status.gap{background:var(--gap-soft);color:var(--gap)}
+
+  .qbody{grid-column:2}
+  blockquote{
+    margin:16px 0 0;
+    padding:0 0 0 18px;
+    border-left:2px solid var(--accent-soft);
+    font-family:"Spectral",Georgia,serif;
+    font-size:16px;
+    line-height:1.65;
+    color:var(--ink-2);
+    max-width:66ch;
+  }
+  blockquote+blockquote{margin-top:12px}
+  .falta{
+    margin:16px 0 0;
+    padding:11px 14px;
+    background:var(--surface-2);
+    border:1px dashed var(--edge);
+    font-size:14px;
+    color:var(--ink-2);
+    max-width:66ch;
+  }
+  .falta b{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:11px;
+    letter-spacing:.09em;
+    text-transform:uppercase;
+    color:var(--gap);
+    display:block;
+    margin-bottom:3px;
+  }
+  .none{
+    margin:14px 0 0;
+    font-size:14.5px;
+    color:var(--ink-3);
+    font-style:italic;
+  }
+
+  /* ---------- observações ---------- */
+  .obs{
+    margin-top:14px;
+    background:var(--surface);
+    border:1px solid var(--edge);
+    padding:24px 26px;
+  }
+  .obs h3{
+    font-size:15px;
+    margin:0 0 4px;
+    font-weight:600;
+  }
+  .obs h3+p{margin-top:0}
+  .obs+.obs{margin-top:12px}
+  .facts{
+    list-style:none;
+    margin:6px 0 0;
+    padding:0;
+    display:grid;
+    gap:10px;
+  }
+  .facts li{
+    font-size:15px;
+    color:var(--ink-2);
+    padding-left:16px;
+    position:relative;
+    max-width:70ch;
+  }
+  .facts li::before{
+    content:"";
+    position:absolute;
+    left:0;top:.62em;
+    width:6px;height:6px;
+    background:var(--accent);
+  }
+  .facts b{color:var(--ink);font-weight:600}
+
+  .tablewrap{overflow-x:auto;margin-top:14px}
+  table{border-collapse:collapse;width:100%;min-width:420px;font-size:14.5px}
+  th,td{text-align:left;padding:9px 14px;border-bottom:1px solid var(--edge-soft)}
+  th{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:10.5px;
+    letter-spacing:.11em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    font-weight:500;
+    border-bottom:1px solid var(--edge);
+  }
+  td:first-child{font-family:"Spectral",Georgia,serif;font-style:italic;color:var(--ink-3)}
+  td:last-child{font-weight:500}
+
+  footer{
+    margin-top:56px;
+    padding-top:22px;
+    border-top:1px solid var(--edge);
+    font-size:13.5px;
+    color:var(--ink-3);
+    max-width:70ch;
+  }
+
+  @media (max-width:760px){
+    .board{grid-template-columns:1fr}
+    .brow{grid-template-columns:1fr;gap:8px}
+    .bcount{text-align:left}
+    .q{grid-template-columns:1fr;gap:0}
+    .qnum{padding:0 0 6px}
+    .qbody{grid-column:1}
+    header.masthead{padding-top:36px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none !important;animation:none !important}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <div>
+      <p class="eyebrow">Enter · Senior AI Deployment</p>
+      <h1>Debriefing com o Fernando</h1>
+      <p class="sub">34 perguntas enviadas, respondidas por áudio. As respostas estão nas palavras dele, com limpeza apenas de marcador de fala e correção de transcrição, sempre entre colchetes.</p>
+    </div>
+    <button class="theme-btn" id="themeBtn" type="button">Tema</button>
+  </header>
+
+  <section class="board" aria-label="Placar geral">
+    <div class="tile ok"><span class="n">11</span><span class="lbl">Respondidas</span></div>
+    <div class="tile partial"><span class="n">13</span><span class="lbl">Parciais — respondeu por outro ângulo ou pela metade</span></div>
+    <div class="tile gap"><span class="n">10</span><span class="lbl">Não respondidas — não tocou no assunto</span></div>
+  </section>
+
+  <section class="blocks" aria-label="Cobertura por bloco" id="blocks"></section>
+
+  <nav class="filters" aria-label="Filtrar por status">
+    <button class="chip" data-f="all" aria-pressed="true" type="button">Todas · 34</button>
+    <button class="chip" data-f="ok" aria-pressed="false" type="button">Respondidas · 11</button>
+    <button class="chip" data-f="partial" aria-pressed="false" type="button">Parciais · 13</button>
+    <button class="chip" data-f="gap" aria-pressed="false" type="button">Não respondidas · 10</button>
+  </nav>
+
+  <main id="main"></main>
+
+  <h2 class="sec">Observações — o que ele falou fora das perguntas</h2>
+
+  <div class="obs">
+    <h3>Sobre o nível de profundidade que ele considera necessário</h3>
+    <blockquote>“Vou te mandar um áudio aqui por tópico. Eu vou passar um contexto mais geral. Muito sinceramente, eu [não] vou entrar em todas as perguntas. Então, se você quiser realmente saber um pouco mais a fundo, pode perguntar, claro. Mas, cara, eu diria que não é tão necessário você saber isso tudo a esse nível de profundidade. Algumas coisas nem eu sei tão de bate-pronto assim. É mais o contexto geral mesmo.”</blockquote>
+  </div>
+
+  <div class="obs">
+    <h3>Fonte que ele recomendou</h3>
+    <blockquote>“Sobre mercado, o episódio do [Mateus] com o [?], um episódio que é gravado lá na Sequoia, ele entra relativamente bastante sobre isso. Inclusive ele faz comparação com qualquer outra empresa de LLM, tipo [Anthropic], OpenAI, [sobre] se eles não são concorrentes, e até mesmo consultorias, tipo o que impede a Accenture de fazer o que a gente faz.”</blockquote>
+  </div>
+
+  <div class="obs">
+    <h3>Nomes, clientes e vocabulário interno que apareceram</h3>
+    <ul class="facts">
+      <li><b>Claro</b> — cliente novo, implementação do zero, dividido entre ele (projeto) e outra pessoa (parametrização).</li>
+      <li><b>Latam</b> — cliente, tocado pelo <b>Fraga</b>.</li>
+      <li><b>enterOS</b> — nome do novo escopo de serviço, a plataforma em que se acompanha todo caso.</li>
+      <li><b>Share of wallet</b> — percentual da carteira de processos do cliente que a Enter opera. Ele chamou de principal alavanca de crescimento da empresa.</li>
+      <li><b>Subsídio</b> — nome interno para as evidências que o cliente precisa prover sobre cada caso.</li>
+    </ul>
+  </div>
+
+  <h2 class="sec">Notas de transcrição</h2>
+  <div class="obs">
+    <p style="margin:0;color:var(--ink-2);font-size:15px;max-width:66ch">Correções sobre erros evidentes do áudio, todas sinalizadas com colchetes no texto das respostas.</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Transcrição</th><th>Lido como</th></tr></thead>
+        <tbody>
+          <tr><td>“RPs do cliente”</td><td>ERPs</td></tr>
+          <tr><td>“Mantropik”</td><td>Anthropic</td></tr>
+          <tr><td>“Harvard”</td><td>Harvey</td></tr>
+          <tr><td>“carteiro”</td><td>carteira</td></tr>
+          <tr><td>“principal aval”</td><td>principal alavanca</td></tr>
+          <tr><td>“causa maior”</td><td>força maior</td></tr>
+          <tr><td>“essência operacional”</td><td>excelência operacional</td></tr>
+          <tr><td>“Inter” / “Entra”</td><td>Enter</td></tr>
+          <tr><td>“que a gente chama de interesse”</td><td>enterOS</td></tr>
+          <tr><td>“Matheus”</td><td>Mateus</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <footer>
+    <p>Continua ilegível: com quem é o episódio gravado na Sequoia (“o episódio do Mateus com o Lá”). O trecho “eu vou entrar em todas as perguntas” foi lido como “eu <b>não</b> vou entrar em todas as perguntas”, pelo contexto da frase seguinte.</p>
+  </footer>
+
+</div>
+
+<script>
+const DATA = [
+ {b:"Vendas", n:1, s:"gap", q:"Argumentos de venda (pitch deck)"},
+ {b:"Vendas", n:2, s:"partial", q:"Quem são os stakeholders dessa venda (é sempre o time legal? CFO se envolve? Quando entra o time técnico? fazem POC? como fica LGPD no contrato?)",
+  a:[`Quem faz a venda é o time de Growth. É um time dedicado aqui que é basicamente responsável por isso e é um time bem institucional. É um time que se conecta com a diretoria e [chega n]a parte jurídica das outras empresas e introduz a coisa. Então é uma venda bem institucional e você precisa ter um lobby muito grande. Normalmente a galera desse time são pessoas bem relacionadas de mercado, que conseguem abrir porta e chegar [em] clientes, então normalmente eles que comandam as negociações.`],
+  f:`Se o CFO se envolve, quando entra o time técnico, se fazem POC, e como fica a LGPD no contrato.`},
+ {b:"Vendas", n:3, s:"gap", q:"Qual o roadmap médio de integração?"},
+ {b:"Vendas", n:4, s:"ok", q:"Enter utiliza apenas as integrações próprias dos LLMs ou integra na licença do cliente (se houver)?",
+  a:[`A gente integra sim com uns [ERPs] do cliente pra puxar dados e colocar dados, porque o dado sempre nasce lá, tipo processo. Quem tem esse controle é o cliente, então a gente se conecta sim. Mas em relação a LLM, são todas dentro da infraestrutura da Enter, então a gente não tem nenhum modelo próprio, eu acho que não. O modelo próprio que eu falo é self-hosted, acho que a gente não tem. São APIs, tipo OpenAI e Claude. A gente tem algumas redundâncias em relação a [isso].`]},
+ {b:"Vendas", n:5, s:"ok", q:"Para definição de ICP, quais são as principais métricas? Volume de processos? Valor gasto em processos por ano?",
+  a:[`Eu não sei qual que é o mínimo, mas são apenas grandes clientes que têm um grande volume de processo. Então, sei lá, a partir de mil processos, por exemplo, por mês, aí que são clientes potenciais nossos. Então, de maneira geral, as grandes empresas.`]},
+ {b:"Vendas", n:6, s:"partial", q:"Quais as diferenças no pitch para mitigação de processo trabalhista e da esfera civil? Os stakeholders dentro das empresas mudam?",
+  a:[`Hoje a gente tá na parte civil. Foi o primeiro produto e agora a gente tá indo pra parte trabalhista também. Alguns clientes a gente tem só no trabalhista, outra [outros] a gente começou no civil, tá puxando trabalhista deles também.`],
+  f:`A diferença de pitch entre as duas esferas e se os stakeholders dentro do cliente mudam.`},
+ {b:"Vendas", n:7, s:"partial", q:"Quais os principais canais de aquisição de cliente hoje?",
+  a:[`Você precisa ter um lobby muito grande. Normalmente a galera desse time são pessoas bem relacionadas de mercado, que conseguem abrir porta e chegar [em] clientes.`],
+  f:`Se existe algum canal além de relacionamento e lobby (inbound, evento, indicação de cliente, parceria).`},
+ {b:"Vendas", n:8, s:"gap", q:"Quais são os modelos de cobrança atualmente?"},
+ {b:"Vendas", n:9, s:"partial", q:"Vendem solução modular? Qual produto é a porta de entrada? Tem lógica de cross-sell e upsell?",
+  a:[`Quando a Enter começou, [o] primeiro produto dela era só contestação, então é montar peças de contestação, que é a defesa. Agora a gente tem esse novo escopo de serviço que a gente chama de enterOS, que [é] a plataforma [em] que você acompanha todo caso.`,
+     `O ponto importante é que a gente pega carteira dos clientes. [Pode] ter um cliente que tem [mil] processos por mês, não necessariamente a gente pega os [mil], então a gente pode pegar, por exemplo, 500 no primeiro momento e ir aumentando. Se chama share of wallet, que é percentual de carteira. Isso é uma métrica bem importante, que é a principal alavanca nossa. Chegar em 100% de share of wallet dos clientes. Então você pode começar com 20, 10 e ir aumentando. A gente tem alguns clientes que são 100% e são baita case da empresa. Mas a maioria não [é] 100% share of wallet, e essa é a principal alavanca de crescimento da empresa.`,
+     `Alguns clientes a gente tem só no trabalhista, outra [outros] a gente começou no civil, tá puxando trabalhista deles também.`],
+  f:`Se a solução é vendida de forma modular e qual é hoje o produto de porta de entrada.`},
+ {b:"Vendas", n:10, s:"partial", q:"Qual a maior objeção que os times jurídicos levantam, e como vocês contornam?",
+  a:[`Tem questão de aceitação. Tipo, a gente é uma empresa de tecnologia [que vai] prestar serviço jurídico, a gente precisa convencer a empresa que isso realmente faça sentido.`],
+  f:`Qual é a objeção concreta e como eles contornam.`},
+ {b:"Vendas", n:11, s:"partial", q:"O time jurídico e o CFO que são os decisores da contratação?",
+  a:[`É um time que se conecta com a diretoria e [chega n]a parte jurídica das outras empresas e introduz a coisa. Então é uma venda bem institucional.`],
+  f:`Confirmação explícita sobre o CFO.`},
+ {b:"Vendas", n:12, s:"gap", q:"Como o modelo SaaS centralizado sustenta com cliente enterprise sensível a dado jurídico? Isso pode ser um bloqueio comercial?"},
+ {b:"Vendas", n:13, s:"gap", q:"O quanto conhecimento na área legal influencia no processo de venda?"},
+
+ {b:"Produto", n:14, s:"partial", q:"Quais são as formas de integração / deployment?",
+  a:[`A gente integra sim com uns [ERPs] do cliente pra puxar dados e colocar dados, porque o dado sempre nasce lá.`,
+     `Dado um processo, não é apenas montar a peça de defesa, mas fazer tudo [...] cadastro em vários tipos de plataforma que precisa ser feito, acompanhamento de prazo.`],
+  f:`O mapa das formas de integração e deployment (API, arquivo, acesso direto, etc.).`},
+ {b:"Produto", n:15, s:"ok", q:"Quais são as variáveis de checagem de fraude?",
+  a:[`O legal da Enter também é que a gente consegue ver muita coisa por conta própria. É essa questão de jurisprudência falsa. A gente consegue, nas nossas ferramentas, ver se o outro advogado não tá citando uma jurisprudência falsa. A gente consegue fazer alguns cruzamentos de dados, advogado ofensor. Às vezes é algum advogado de má fé, que ele tem vários processos para aquele mesmo cliente, protocolo duplicado. Quando o advogado pega e usa o mesmo número de protocolo de outros clientes para justificar uma ação daquele cliente. “Eu abri dez protocolos com vocês e vocês não me responderam” — esses protocolos são de outros. Esse tipo de coisa a gente consegue ver, a gente tem ferramenta para isso.`]},
+ {b:"Produto", n:16, s:"partial", q:"Eles integram nos demais sistemas internos da empresa? (Sistema de ponto, e-mail para acessar dispensas médicas / atestados, holerite) Como integram?",
+  a:[`A gente integra com o [ERP] do cliente. Normalmente a gente chama de subsídio. Dado que um caso existiu, a empresa tem que prover os subsídios daquele caso. Exemplo: banco. O banco está sendo processado [por] uma determinada fraude. Falaram que teve um empréstimo [no] nome de uma pessoa e a pessoa falou que não foi ela, foi uma fraude. O que o banco tem que fazer? Ele tem [que] analisar aquele caso, então ele tem um time interno que vai fazer uma investigação do tipo: “tá falando que é fraude, mas vamos ver, essa pessoa assinou o contrato? Como é que foi a forma de contratação do empréstimo? Foi presencial? Teve biometria?”. Existe todo um fluxo onde todos os casos precisam passar, e quem faz isso é o próprio time interno do cliente, e passa para gente. É baseado nessas evidências que a gente monta as teses.`],
+  f:`Se integram em sistema de ponto, e-mail e holerite (os exemplos da pergunta) e como é feita a integração tecnicamente.`},
+ {b:"Produto", n:17, s:"partial", q:"Quais os bureaus que eles estão integrados pelo lado da Enter? (Ex: para mapear fraude eles consultam se o autor tem histórico de processos similares em algum lugar — Jusbrasil, etc)",
+  a:[`Tem uns casos legais da Latam, por exemplo. Quem toca Latam é o Fraga, inclusive. A gente conecta com uma API de tempo. Se não me engano, ela foi desenvolvida pela galera da Agulhas Negras, ITA, não sei, algum órgão assim, uma equipe federal. E você consegue ver: teve um cancelamento de voo e a Latam foi processada. Só que se for por motivo de [força] maior, ela não pode ser processada. Então se for um mau tempo, ela ganha o caso. A gente conseguiu conectar diretamente nessa API para puxar esse tipo de dado. Isso é uma inteligência a mais que a gente consegue [ter]. Mas é muito caso a caso. De maneira geral, a gente consegue sim dar inteligência nessa análise.`],
+  f:`Nenhum bureau nomeado (Jusbrasil ou equivalente). O exemplo dado é uma API de dados meteorológicos, não um bureau.`},
+ {b:"Produto", n:18, s:"partial", q:"Existe algum score de jurisprudência? A Enter faz uma análise preditiva de sucesso da defesa? (Fala de Jurimetria no site deles)",
+  a:[`A gente consegue, nas nossas ferramentas, ver se o outro advogado não tá citando uma jurisprudência falsa.`],
+  f:`Se existe score de jurisprudência e se há análise preditiva de sucesso da defesa. Ele falou de checagem de jurisprudência falsa, que não é a mesma coisa.`},
+ {b:"Produto", n:19, s:"gap", q:"Como é feito o acompanhamento se houve mitigação ou não do processo? (Qual a janela de prazo do tracking — se o autor não processar em x anos?)"},
+ {b:"Produto", n:20, s:"partial", q:"Como eles medem sucesso do saving financeiro da plataforma?",
+  a:[`O outro KPI que a gente acompanha é o ticket médio. Porque, beleza, ela não tem condição de ganhar o caso [em] que ela tá errada, mas a gente pode ir pra um acordo, e com esse acordo a gente consegue um valor melhor.`],
+  f:`Como o saving é calculado e comprovado em número (baseline, comparação contra o quê).`},
+ {b:"Produto", n:21, s:"gap", q:"Como eles comprovam track record, dado que a empresa é recente e o ciclo judicial em média é longo?"},
+ {b:"Produto", n:22, s:"ok", q:"Acordo bilateral entre empresa e autor é considerado sucesso? Quais os critérios?",
+  a:[`Tem caso que a empresa tá errada e não tem o que fazer, realmente foi um caso que a empresa agiu errado, por conta de qualquer motivo, seja um processo errado que ela executou, seja [porque] o funcionário agiu de má fé. Isso daí pode acontecer. Então o outro KPI que a gente acompanha é o ticket médio, porque, beleza, ela não tem condição de ganhar o caso [em] que ela tá errada, mas a gente pode ir pra um acordo, e com esse acordo a gente consegue um valor melhor.`]},
+ {b:"Produto", n:23, s:"partial", q:"Qual grau de personalização da ferramenta para atender diferentes necessidades de negócio?",
+  a:[`A coisa que a gente faz normalmente nessa parte de parametrização, ela é bem extensiva, porque tem muita coisa que a gente tem que fazer meio que na mão.`,
+     `Na Claro, que é um cliente novo, precisa tudo ser implementado do zero, tanto a parte da contestação, que tem um tempo de execução grande de parametrizar ferramenta, quanto também a questão de estruturar a operação deles.`],
+  f:`Até onde vai a personalização e o que é fixo no produto.`},
+
+ {b:"Escopo", n:24, s:"ok", q:"Como é dividido o tempo do AI deployment entre execução do projeto, contato com cliente e melhoria de produto interno?",
+  a:[`O AI deployment tem tanto papel ali de execução quanto o papel de tocar o projeto. Quando a Enter começou, [o] primeiro produto dela era só contestação, então é montar peças de contestação, que é a defesa. Era 100% execução, porque você simplesmente parametrizava a solução, dava para o cliente e ele usava. Agora que a gente tem esse novo escopo de serviço que a gente chama de enterOS, [a] plataforma [em] que você acompanha todo caso, então virou muito mais um projeto. Dado um processo, não é apenas montar a peça de defesa, mas fazer tudo. [Tem a] questão de excelência operacional, de cadastro em vários tipos de plataforma que precisa ser feito, acompanhamento de prazo. Então tem uma parte forte do projeto.`,
+     `Vai depender. Por exemplo, na Claro, que é um cliente novo, precisa tudo ser implementado do zero, tanto a parte da contestação, que tem um tempo de execução grande de parametrizar ferramenta, quanto também a questão de estruturar a operação deles. Então quase 50%. E no projeto da Claro, por exemplo, tá fazendo um outro menino, então ele tá mais focado na parte de parametrizar, eu tô mais focado na parte do projeto. Mas aí vai depender muito do tipo de cliente: se o projeto já aconteceu, se já tá andando, ou se é um projeto novo.`]},
+ {b:"Escopo", n:25, s:"ok", q:"O que você ainda faz manualmente para cada cliente que você gostaria que já fosse um playbook/workframe?",
+  a:[`A coisa que a gente faz normalmente nessa parte de parametrização, ela é bem extensiva, porque tem muita coisa que a gente tem que fazer meio que na mão. Muito acompanhamento de dados também: a gente monta dash, a gente bate no banco pra tá fazendo esse tipo de acompanhamento. Então tem muita coisa que o produto tá evoluindo pra deixar as coisas mais produtizadas, com mais padrão. Enquanto o produto tá evoluindo, a gente precisa fazer muita coisa [por] fora ainda, mas a ideia é que fique tudo cada vez mais centralizado dentro do produto.`]},
+ {b:"Escopo", n:26, s:"gap", q:"Quanto tempo leva do kickoff até o cliente ver valor na Enter?"},
+ {b:"Escopo", n:27, s:"ok", q:"Quais as métricas de sucesso para um processo end-to-end de implementação?",
+  a:[`Métrica de sucesso é principalmente questão de êxito. Êxito é quantos casos você ganha. Então êxito e ticket médio. Porque tem caso que a empresa tá errada e não tem o que fazer. Então o outro KPI que a gente acompanha é o ticket médio, porque, beleza, ela não tem condição de ganhar o caso [em] que ela tá errada, mas a gente pode ir pra um acordo, e com esse acordo a gente consegue um valor melhor. Então êxito e ticket médio são os dois principais. De maneira geral, tem questão de prazo também, que acompanhar prazo jurídico envolve uma série de complexidades, então não perder prazo, por exemplo, é muito importante também. Mas de maneira geral são esses dois que são os mais importantes.`]},
+ {b:"Escopo", n:28, s:"ok", q:"Qual é a maior dor da área de AI Deployment hoje?",
+  a:[`Eu acho que a maior dor da área de AI deployment hoje é que o produto ainda tem bastante… é um produto muito novo e ainda tem bastante espaço pra amadurecer. Então muita coisa precisa ser feita manual, o AI deployment ainda faz muita coisa manual por conta disso. Talvez essa seja a principal dor.`]},
+ {b:"Escopo", n:29, s:"gap", q:"Se um cliente não tem bandwidth para integração, qual é a solução que a Enter oferece?"},
+
+ {b:"Mercado", n:30, s:"ok", q:"Quem são os principais concorrentes?",
+  a:[`Principais concorrentes: a gente tá tomando mercado de clientes de escritórios que já fazem o que a gente faz. Então tem essa concorrência direta em termos de mercado, que a gente rouba literalmente fatia deles.`,
+     `Tem algumas outras empresas que também são da área, tipo a [Harvey], que é bem grande nos Estados Unidos, é maior que a Enter até, só que ataca uma outra fatia de mercado. [A gente ataca] especificamente contencioso de massa de grandes empresas. Se pegar [Harvey], por exemplo, eles atacam um middle market, que é uma coisa que a gente não vai, pelo menos não agora, e não tem muita pretensão. Então é um ponto legal: Enter significa Enter de enterprise, então o foco é de fato oferecer soluções para essas grandes empresas. Nessa área jurídica não existe nenhum concorrente direto em termos de solução tecnológica que tá fazendo isso hoje.`]},
+ {b:"Mercado", n:31, s:"ok", q:"Um LLM mainstream de mercado como o Claude pode ameaçar o business da Enter de alguma forma? Quais principais diferenciais além do contexto?",
+  a:[`Pensando em termos de empresas novas, de tecnologia: quando você pega grandes empresas como [Anthropic], como OpenAI, Google etc., eles não vão atacar um problema tão específico assim. São bem mais soluções generalistas, onde a pessoa, usando a ferramenta, tenta [endereçar] as nossas dores. A gente aqui vai muito mais deep nas coisas, pra entrar dentro da operação da pessoa, e precisa de uma expertise muito grande.`]},
+ {b:"Mercado", n:32, s:"ok", q:"Qual barreira de entrada pra esse mercado?",
+  a:[`[A Enter] tem uma força muito grande do modelo tradicional, que hoje é o mercado forte. Então vai ter sempre algumas barreiras no sentido de: os outros escritórios também têm poder, são escritórios grandes que não querem perder mercado, então tem toda uma pressão política. Tem questão de aceitação: a gente é uma empresa de tecnologia [que vai] prestar serviço jurídico, a gente precisa convencer a empresa que isso realmente faça sentido. Então tem uma série de coisas aí que são desafios da empresa.`]},
+ {b:"Mercado", n:33, s:"partial", q:"Qual o esforço para uma empresa desenvolver isso internamente?",
+  a:[`Até mesmo consultoria não é tão trivial, porque você precisa de fato fazer um produto, não seria tipo um projeto.`],
+  f:`O esforço para a própria empresa cliente desenvolver internamente. Ele respondeu do ângulo da consultoria, não do cliente.`},
+ {b:"Mercado", n:34, s:"gap", q:"Como eles veem a questão de quem possui o dado afetar o futuro da empresa? Existe já um movimento de empresas construírem sua própria licença de AI ou comprarem de players que fazem o deployment no ambiente da empresa (ou até opensource). Isso é um risco ou oportunidade pra Enter?"}
+];
+
+const LABEL = {ok:"Respondida", partial:"Parcial", gap:"Não respondida"};
+const BLOCKS = ["Vendas","Produto","Escopo","Mercado"];
+const RANGE = {Vendas:"01 — 13", Produto:"14 — 23", Escopo:"24 — 29", Mercado:"30 — 34"};
+
+/* block coverage bars */
+const blocksEl = document.getElementById("blocks");
+blocksEl.innerHTML = BLOCKS.map(b=>{
+  const items = DATA.filter(d=>d.b===b);
+  const c = {ok:0,partial:0,gap:0};
+  items.forEach(i=>c[i.s]++);
+  const pct = k => (c[k]/items.length*100).toFixed(4)+"%";
+  return `<div class="brow">
+    <div class="bname">${b}<span>${RANGE[b]}</span></div>
+    <div class="bar" role="img" aria-label="${c.ok} respondidas, ${c.partial} parciais, ${c.gap} não respondidas">
+      <i class="s-ok" style="width:${pct("ok")}"></i>
+      <i class="s-partial" style="width:${pct("partial")}"></i>
+      <i class="s-gap" style="width:${pct("gap")}"></i>
+    </div>
+    <div class="bcount">${c.ok} / ${c.partial} / ${c.gap}</div>
+  </div>`;
+}).join("");
+
+/* question list */
+const main = document.getElementById("main");
+main.innerHTML = BLOCKS.map(b=>{
+  const cards = DATA.filter(d=>d.b===b).map(d=>{
+    const quotes = (d.a||[]).map(t=>`<blockquote>“${t}”</blockquote>`).join("");
+    const falta = d.f ? `<div class="falta"><b>Falta</b>${d.f}</div>` : "";
+    const empty = !d.a ? `<p class="none">Ele não tocou nesse assunto.</p>` : "";
+    return `<article class="q ${d.s}" data-s="${d.s}">
+      <div class="qnum">${String(d.n).padStart(2,"0")}</div>
+      <div class="qhead">
+        <p class="qtext">${d.q}</p>
+        <span class="status ${d.s}">${LABEL[d.s]}</span>
+      </div>
+      <div class="qbody">${quotes}${empty}${falta}</div>
+    </article>`;
+  }).join("");
+  return `<section class="sec-wrap" data-block="${b}">
+    <h2 class="sec">${b} · ${RANGE[b]}</h2>${cards}
+  </section>`;
+}).join("");
+
+/* filtering */
+const chips = [...document.querySelectorAll(".chip")];
+chips.forEach(chip=>chip.addEventListener("click",()=>{
+  const f = chip.dataset.f;
+  chips.forEach(c=>c.setAttribute("aria-pressed", String(c===chip)));
+  document.querySelectorAll(".q").forEach(card=>{
+    card.hidden = !(f==="all" || card.dataset.s===f);
+  });
+  document.querySelectorAll(".sec-wrap").forEach(sec=>{
+    sec.hidden = ![...sec.querySelectorAll(".q")].some(c=>!c.hidden);
+  });
+}));
+
+/* theme toggle */
+const btn = document.getElementById("themeBtn");
+btn.addEventListener("click",()=>{
+  const cur = document.documentElement.getAttribute("data-theme");
+  const sysDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const isDark = cur ? cur==="dark" : sysDark;
+  document.documentElement.setAttribute("data-theme", isDark ? "light" : "dark");
+});
+</script>
+</body>
+</html>
